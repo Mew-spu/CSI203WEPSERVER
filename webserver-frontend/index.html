@@ -5,15 +5,23 @@
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            <h2> Upload & Download Files</h2>
-            <input type="file" id="fileInput">
+
+        <div class="login-container" id="login-form">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p id="login-message"></p>
+        </div>
+        
+
+        <div class="container" id="file-manager" style="display: none;">
+            <input type="file" id="file-input" onchange="previewFile()">
             <button onclick="uploadFile()">Upload</button>
-            <p id="uploadStatus"></p>
-            <h3> Files on Server</h3>
-            <ul id="fileList"></ul>
+            <img id="preview" style="max-width: 100px; display:none">
+            <h2>Uploaded Files</h2>
+            <ul id="file-list"></ul>
         </div>
        
-    <script src="sc"></script>
+    <script src="script.js"></script>
     </body>
 </html>

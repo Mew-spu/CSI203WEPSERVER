@@ -1,0 +1,180 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    margin-top: 1rem;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #28a745; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+h2 {
+    font-size: 24px;
+    color: #28a745; 
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 30px;
+    color: #28a745; 
+}
+
+
+button {
+    background-color: #28a745; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3dc95b; 
+}
+
+
+input[type="file"] {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f8f9fa;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #45a049;
+}
+
+
+#loginStatus {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #d9534f; 
+}
+
+
+.login-container input::placeholder {
+    color: #aaa;
+}
+
+/* จัดการ Layout ของรายการไฟล์ */
+.file-item {
+    display: flex;          /* ใช้ Flexbox */
+    align-items: center;    /* จัดกึ่งกลางแนวตั้ง */
+    justify-content: space-between; /* ให้ชื่อไฟล์อยู่ซ้าย ปุ่มอยู่ขวา */
+    padding: 10px;
+    border: 1px solid #28a745;
+    border-radius: 8px;
+    margin: 5px 0;
+    background: white;
+}
+
+/* ปรับขนาดชื่อไฟล์ */
+.file-name {
+    flex: 1; /* ขยายชื่อไฟล์เพื่อให้เหลือพื้นที่ให้ปุ่มด้านขวา */
+    word-break: break-word; /* ป้องกันข้อความล้น */
+}
+
+/* กล่องปุ่ม Download และ Delete */
+.file-actions {
+    display: flex;
+    gap: 10px; /* เว้นระยะระหว่างปุ่ม */
+}
+
+/* ปรับปุ่ม Download */
+.download-btn {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ปรับปุ่ม Delete */
+.delete-btn {
+    background: green;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
