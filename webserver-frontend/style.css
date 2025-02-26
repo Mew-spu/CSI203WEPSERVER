@@ -6,41 +6,62 @@
 }
 
 
-body {
-    margin-top: 1rem;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 20px;
-}
+
 
 
 .container {
-    max-width: 600px;
-    margin: 0 auto;
+    width: 360px;
+    margin-bottom: 3rem;
+    margin-left: 60.9rem;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    border: 2px solid #28a745; 
+    border: 2px solid #282aa7;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  
+    max-height: 300px; 
+    overflow-y: auto; 
+}
+/* ปรับแต่งแถบเลื่อนแนวตั้ง */
+.container::-webkit-scrollbar {
+    width: 10px; /* ความกว้างของแถบเลื่อน */
+}
+
+/* ตกแต่งตัวแถบเลื่อน */
+.container::-webkit-scrollbar-track {
+    background: #f0f4ff; /* สีพื้นหลังของแถบเลื่อน */
+    border-radius: 10px; /* ทำให้ขอบมน */
+}
+
+/* ตกแต่งปุ่มเลื่อน */
+.container::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #6a5acd, #8a2be2); /* สีไล่ระดับ */
+    border-radius: 10px; /* ทำให้ขอบมน */
+    border: 2px solid white; /* ขอบสีขาว */
+}
+
+/* เมื่อโฮเวอร์แถบเลื่อน */
+.container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #8a2be2, #4b0082); /* เปลี่ยนสีเมื่อโฮเวอร์ */
 }
 
 
 h2 {
     font-size: 24px;
-    color: #28a745; 
+    color: #004fb6; 
     margin-bottom: 20px;
 }
 
 h3 {
     font-size: 20px;
     margin-top: 30px;
-    color: #28a745; 
+    color: #004fb6; 
 }
 
 
 button {
-    background-color: #28a745; 
+    background-color: #000f92; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -50,14 +71,14 @@ button {
 }
 
 button:hover {
-    background-color: #3dc95b; 
+    background-color: #505fe2; 
 }
 
 
 input[type="file"] {
     margin: 10px 0;
     padding: 10px;
-    border: 1px solid #28a745;
+    border: 1px solid #000f92;
     border-radius: 5px;
 }
 
@@ -70,7 +91,7 @@ li {
     background-color: #f8f9fa;
     margin: 5px 0;
     padding: 10px;
-    border: 1px solid #28a745;
+    border: 1px solid #000f92;
     border-radius: 5px;
 }
 
@@ -81,29 +102,33 @@ li {
 }
 
 body {
+    position: fixed;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-image:url(../dddd.png);
 }
 
 
 .login-container {
     background-color: white;
     padding: 20px;
+    margin-left: 62.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 300px;
+    height: 300px;
     text-align: center;
 }
 
 
 .login-container input {
+    
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 20px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
@@ -111,11 +136,13 @@ body {
 
 
 .login-container button {
+    
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #000f92;
     color: white;
     border: none;
+    margin-top: 2.5rem;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
@@ -123,7 +150,7 @@ body {
 }
 
 .login-container button:hover {
-    background-color: #45a049;
+    background-color: #87a3ff;
 }
 
 
@@ -138,43 +165,75 @@ body {
     color: #aaa;
 }
 
-/* จัดการ Layout ของรายการไฟล์ */
+
 .file-item {
-    display: flex;          /* ใช้ Flexbox */
-    align-items: center;    /* จัดกึ่งกลางแนวตั้ง */
-    justify-content: space-between; /* ให้ชื่อไฟล์อยู่ซ้าย ปุ่มอยู่ขวา */
+    display: flex;       
+    align-items: center;   
+    justify-content: space-between;
     padding: 10px;
-    border: 1px solid #28a745;
+    border: 1px solid #500ca8;
     border-radius: 8px;
     margin: 5px 0;
-    background: white;
+    background: rgba(191, 194, 240, 0.493);
 }
 
-/* ปรับขนาดชื่อไฟล์ */
+
 .file-name {
-    flex: 1; /* ขยายชื่อไฟล์เพื่อให้เหลือพื้นที่ให้ปุ่มด้านขวา */
-    word-break: break-word; /* ป้องกันข้อความล้น */
+    flex: 1; 
+    word-break: break-word; 
 }
 
-/* กล่องปุ่ม Download และ Delete */
+
 .file-actions {
     display: flex;
-    gap: 10px; /* เว้นระยะระหว่างปุ่ม */
+    gap: 10px;
 }
 
-/* ปรับปุ่ม Download */
 .download-btn {
     color: blue;
     text-decoration: none;
     font-weight: bold;
 }
 
-/* ปรับปุ่ม Delete */
+
 .delete-btn {
-    background: green;
+    background: rgb(228, 82, 106);
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 5px;
+}
+
+.logout-btn{
+    margin-top: 1rem;
+}
+
+.file-input{
+    background-color: #2f51cc;
+}
+.file-input {
+    display: none; /* ซ่อน input เดิม */
+}
+
+.file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff; /* สีชมพูน่ารัก */
+    color: rgb(8, 0, 114);
+    font-size: 14px;
+    
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    margin-right: 5px;
+    transition: 0.3s;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #0011a8;
+}
+
+.file-label:hover {
+    background-color: #d5cff8;
+    border-color: #10009e;
 }

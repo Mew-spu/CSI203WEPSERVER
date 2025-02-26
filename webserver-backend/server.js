@@ -76,7 +76,7 @@ app.get("/files", (req, res) => {
     });
 });
 
-//ลบไฟล์
+
 
 
 app.delete("/delete/:filename", (req,res) => {
@@ -97,6 +97,8 @@ app.delete("/delete/:filename", (req,res) => {
         res.json({ success: true, message: "File deleted Successfully"})
     })
 })
+
+
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);

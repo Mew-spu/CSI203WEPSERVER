@@ -32,14 +32,18 @@ function login() {
     });
 }
 
+function logout() {
+    localStorage.removeItem("loggedIn");  // ลบสถานะการล็อกอินจาก localStorage
+    document.getElementById("login-form").style.display = "block";  // แสดงฟอร์มล็อกอิน
+    document.getElementById("file-manager").style.display = "none";  // ซ่อนส่วนการจัดการไฟล์
+    alert("You have logged out successfully!");
+}
 
 function previewFile() {
-                                                    //เริ่มต้นใน array ตำแหน่งี่0 คือตำแหน่งแรก
     const file = document.getElementById("file-input").files[0]
     if(file){
-        //FileReader(); ใช้อ่านไฟล์ในเครื่องของ User 
         const reader = new FileReader()
-        reader.onload = function(e){           //source
+        reader.onload = function(e){
             document.getElementById("preview").src = e.target.result
             document.getElementById("preview").style.display = "block"
         }
@@ -68,11 +72,11 @@ function uploadFile(){
 }
 
 function loadFiles(){
-    fetch(`${serverUrl}/files`)
-    .then(res => res.json())
+    fetch(`${serverUrl}/files`) //เรียก API /files เพื่อดึงรายการไฟล์จากเซิร์ฟเวอร์
+    .then(res => res.json())    //แปลงข้อมูลที่ได้เป็น JSON
     .then(files => {
         const fileList = document.getElementById("file-list")
-        fileList.innerHTML = ""
+        fileList.innerHTML = "" //ล้างรายการไฟล์ก่อนโหลดใหม่
         files.forEach(file => {
             fileList.innerHTML += `
             <li class="file-item">
@@ -88,11 +92,23 @@ function loadFiles(){
 }
 
 function deleteFile(filename){
+    console.log("File to delete:", filename);  // เพิ่มการตรวจสอบ
     if (confirm(`Are you sure you want to delete ${filename}?`)){
         fetch(`${serverUrl}/delete/${filename}` , { method: "DELETE"})
-            .then(() => loadFiles())
+            .then(res => {
+                if (res.ok) {
+                    loadFiles();
+                } else {
+                    alert("Error deleting file.");
+                }
+            })
+            .catch(err => {
+                console.error("Delete error:", err);
+                alert("An error occurred while trying to delete the file.");
+            });
     }
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const isLoggedIn = localStorage.getItem("loggedIn")
@@ -100,6 +116,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("login-form").style.display = "none"
         document.getElementById("file-manager").style.display = "block"
         loadFiles();
+    } else {
+        document.getElementById("login-form").style.display = "block"
+        document.getElementById("file-manager").style.display = "none"
     }
-})
-
+});
