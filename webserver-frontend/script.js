@@ -18,24 +18,24 @@ function login() {
             document.getElementById("login-form").style.display = "none";
             document.getElementById("file-manager").style.display = "block";
             alert("Login successful!");
-            loadFiles();  // เรียกโหลดไฟล์หลังจาก login สำเร็จ
+            loadFiles();  //เรียกโหลดไฟล์หลังจาก login สำเร็จ
         } else {
-            loginMessage.innerText = "Username or Password incorrect";  // แสดงข้อความเมื่อ login ล้มเหลว
-            loginMessage.style.color = "red";  // เปลี่ยนสีข้อความให้ชัดเจน
+            loginMessage.innerText = "Username or Password incorrect";  //แสดงข้อความเมื่อloginล้มเหลว
+            loginMessage.style.color = "red";  
         }
     })
     .catch(err => {
         console.error("Login error:", err);
         const loginMessage = document.getElementById("login-message");
-        loginMessage.innerText = "An error occurred, please try again later.";  // แสดงข้อความเมื่อเกิดข้อผิดพลาด
-        loginMessage.style.color = "red";  // สีข้อความเมื่อเกิดข้อผิดพลาด
+        loginMessage.innerText = "An error occurred, please try again later.";  
+        loginMessage.style.color = "red";  
     });
 }
 
 function logout() {
     localStorage.removeItem("loggedIn");  // ลบสถานะการล็อกอินจาก localStorage
-    document.getElementById("login-form").style.display = "block";  // แสดงฟอร์มล็อกอิน
-    document.getElementById("file-manager").style.display = "none";  // ซ่อนส่วนการจัดการไฟล์
+    document.getElementById("login-form").style.display = "block";  
+    document.getElementById("file-manager").style.display = "none";  
     alert("You have logged out successfully!");
 }
 

@@ -10,9 +10,10 @@
 
 
 .container {
+    display: flex;
     width: 360px;
     margin-bottom: 3rem;
-    margin-left: 60.9rem;
+    margin-left: 71.5vw;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -23,27 +24,27 @@
     max-height: 300px; 
     overflow-y: auto; 
 }
-/* ปรับแต่งแถบเลื่อนแนวตั้ง */
+
 .container::-webkit-scrollbar {
-    width: 10px; /* ความกว้างของแถบเลื่อน */
+    width: 10px;
 }
 
-/* ตกแต่งตัวแถบเลื่อน */
+
 .container::-webkit-scrollbar-track {
-    background: #f0f4ff; /* สีพื้นหลังของแถบเลื่อน */
-    border-radius: 10px; /* ทำให้ขอบมน */
+    background: #f0f4ff; 
+    border-radius: 10px; 
 }
 
 /* ตกแต่งปุ่มเลื่อน */
 .container::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #6a5acd, #8a2be2); /* สีไล่ระดับ */
-    border-radius: 10px; /* ทำให้ขอบมน */
-    border: 2px solid white; /* ขอบสีขาว */
+    background: linear-gradient(45deg, #6a5acd, #8a2be2); 
+    border-radius: 10px; 
+    border: 2px solid white; 
 }
 
-/* เมื่อโฮเวอร์แถบเลื่อน */
+
 .container::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(45deg, #8a2be2, #4b0082); /* เปลี่ยนสีเมื่อโฮเวอร์ */
+    background: linear-gradient(45deg, #8a2be2, #4b0082); 
 }
 
 
@@ -109,13 +110,16 @@ body {
     align-items: center;
     height: 100vh;
     background-image:url(../dddd.png);
+    background-size: cover;
+    
 }
 
 
 .login-container {
     background-color: white;
     padding: 20px;
-    margin-left: 62.5rem;
+    margin-left: 73.5vw;
+   
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 300px;
@@ -213,13 +217,13 @@ body {
     background-color: #2f51cc;
 }
 .file-input {
-    display: none; /* ซ่อน input เดิม */
+    display: none; 
 }
 
 .file-label {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ffffff; /* สีชมพูน่ารัก */
+    background-color: #ffffff; 
     color: rgb(8, 0, 114);
     font-size: 14px;
     
