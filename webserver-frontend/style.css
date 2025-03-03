@@ -6,14 +6,23 @@
 }
 
 
+#preview {
+    max-width: 260px;
+    max-height: 400px;
+    display: none;
+    margin-left: 50px; /* ขยับไปทางขวา */
+    margin-top: 20px;  /* ขยับลงด้านล่าง */
+    margin-bottom: 20px;
+}
 
 
 
 .container {
     display: flex;
-    width: 360px;
+    width: 800px;
+
     margin-bottom: 3rem;
-    margin-left: 71.5vw;
+    margin-left: 5vw;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -21,7 +30,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   
-    max-height: 300px; 
+    max-height:500px; 
     overflow-y: auto; 
 }
 

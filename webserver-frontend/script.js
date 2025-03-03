@@ -18,7 +18,7 @@ function login() {
             document.getElementById("login-form").style.display = "none";
             document.getElementById("file-manager").style.display = "block";
             alert("Login successful!");
-            loadFiles();  //เรียกโหลดไฟล์หลังจาก login สำเร็จ
+           
         } else {
             loginMessage.innerText = "Username or Password incorrect";  //แสดงข้อความเมื่อloginล้มเหลว
             loginMessage.style.color = "red";  
@@ -40,17 +40,30 @@ function logout() {
 }
 
 function previewFile() {
-    const file = document.getElementById("file-input").files[0]
-    if(file){
-        const reader = new FileReader()
-        reader.onload = function(e){
-            document.getElementById("preview").src = e.target.result
-            document.getElementById("preview").style.display = "block"
+    const file = document.getElementById("file-input").files[0];
+    const previewImage = document.getElementById("preview");
+    const fileMessage = document.getElementById("file-message");
+
+    if (file) {
+        if (file.type.startsWith("image/")) { 
+            // ถ้าเป็นไฟล์รูปภาพ ให้แสดงพรีวิว
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                previewImage.src = e.target.result;
+                previewImage.style.display = "block";
+                fileMessage.style.display = "none"; // ซ่อนข้อความ
+            };
+            reader.readAsDataURL(file);
+        } else {
+            // ถ้าไม่ใช่ไฟล์รูปภาพ ให้แสดงข้อความ
+            previewImage.style.display = "none"; // ซ่อนรูปภาพ
+            fileMessage.innerText = "ไฟล์นี้ไม่สามารถแสดงตัวอย่างได้";
+            fileMessage.style.display = "block"; // แสดงข้อความ
+            fileMessage.style.color = "red";
         }
-        
-        reader.readAsDataURL(file)
     }
 }
+
 
 function uploadFile(){
     const fileInput = document.getElementById("file-input").files[0];

@@ -19,12 +19,15 @@
         </label>
         <input class="file-input" type="file" id="file-input"  onchange="previewFile()">
             <button onclick="uploadFile()">Upload</button>
-            <img id="preview" style="max-width: 100px; display:none">
+            <img id="preview" >
+            <p id="file-message" style="display:none;"></p>
             <h2>Uploaded Files</h2>
             <ul id="file-list"></ul>
+           
             <button class="logout-btn" onclick="logout()">Logout</button>
 
         </div>
+       
        
     <script src="script.js"></script>
     </body>

@@ -26,7 +26,9 @@ app.post("/login", (req, res) => {
 
     const users = [
         { username: "superadmin", password: "1234" },
-        { username: "admin", password: "1234" }
+        { username: "admin", password: "1234" },
+        { username: "user", password: "1234" }
+
     ];
 
     const user = users.find(u => u.username === username && u.password === password);
